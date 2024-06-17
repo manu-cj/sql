@@ -10,7 +10,7 @@
 <nav>
     <ul>
         <li><a href="/weatherApp/">weatherApp</a></li>
-        <li><a href="/exos/php-challenge-auth/">auth</a></li>
+        <li><a href="/exos/php-challenge-auth/login.php">auth</a></li>
         <li><a href="/exos/php-exercises-crud1/">crud1</a></li>
         <ul>
             <li><li><a href="/exos/php-exercises-crud2//Exercice_7/">crud-exo 7</a></li></li>
