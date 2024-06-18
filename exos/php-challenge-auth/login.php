@@ -27,6 +27,9 @@ session_start();
         <button name="button">Se connecter</button>
       </div>
     </form>
+    <div style="background-color: teal; width:300px;">
+    <img src="https://play.pokemonshowdown.com/sprites/bw/venusaur.png" alt="">
+    </div>
     <?php
     }
     else {
@@ -37,6 +40,8 @@ session_start();
         <button name="button">Se déconnecter</button>
       </div>
     </form>
+
+   
       <?php
     }
     ?>

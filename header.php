@@ -17,7 +17,7 @@
             <li><li><a href="/exos/php-exercises-crud2//Exercice_8/">crud-exo 8</a></li></li>
             <li><li><a href="/exos/php-exercises-crud2//Exercice_9/">crud-exo 9</a></li></li>
         </ul>
-        <li><a href="/exos/php-training-mysql/">training-mysql</a></li>
+        <li><a href="/exos/php-training-mysql/read.php">hilking</a></li>
         <li><a href="/sql-exo/">sql-exo</a></li>
     </ul>
 </nav>
