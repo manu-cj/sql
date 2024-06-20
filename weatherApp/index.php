@@ -87,7 +87,7 @@ if (isset($_SESSION['alert'])) {
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($results as $value): ?>
+        <?php foreach ($results as $value){ ?>
             <tr>
                 <td><?= htmlentities($value['ville']) ?></td>
                 <td><?= htmlentities($value['haut']) ?></td>
@@ -101,7 +101,7 @@ if (isset($_SESSION['alert'])) {
                     </form>
                 </td>
             </tr>
-        <?php endforeach; ?>
+        <?php } ?>
         <tr>
             <form class="add-city-form" action="" method="post">
                 <td>

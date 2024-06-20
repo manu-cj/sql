@@ -23,7 +23,7 @@
 			$errors[] = "Le nom est requis.";
 		}
 	
-		$valid_difficulties = ['très facile', 'facile', 'moyen', 'difficile', 'très difficile']; // Exemple de valeurs valides pour 'difficulty'
+		$valid_difficulties = ['très facile', 'facile', 'moyen', 'difficile', 'très difficile'];
 		if (!in_array($difficulty, $valid_difficulties)) {
 			$errors[] = "La difficulté n'est pas valide.";
 		}
