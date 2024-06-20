@@ -29,14 +29,13 @@ if (isset($_POST['submit'])) {
     }
 
      try {
-         // Requête SQL pour insérer un nouveau client
+
          $sql = 'UPDATE clients 
          SET lastName=:lastName, firstName=:firstName, birthDate=:birthDate, card=:card, cardNumber=:cardNumber 
          WHERE id=:id';
 
          $update = $pdo->prepare($sql);
-
-        // Exécution de la requête
+         
         $update->execute([
             ':lastName' => $lastname,
             ':firstName' => $firstname,
@@ -59,7 +58,6 @@ if (isset($_POST['submit'])) {
    
             $update = $pdo->prepare($sql);
    
-           // Exécution de la requête
            $update->execute([
                ':cardNumber' => $_SESSION['cardNumber']
            ]);
@@ -70,6 +68,45 @@ if (isset($_POST['submit'])) {
      } catch (PDOException $e) {
          echo "Erreur : " . $e->getMessage();
      }
+}
+
+if (isset($_POST['delete'])) {
+    $id = htmlspecialchars($_POST['id']);
+    try {
+ 
+   
+    $sql = 'DELETE FROM clients WHERE id = :id';
+    $deleteClient = $pdo->prepare($sql);
+    $deleteClient->execute([':id' => $id]);
+
+    $sql = 'SELECT * FROM bookings WHERE clientId = :clientId';
+    $selectBooking = $pdo->prepare($sql);
+    $selectBooking->execute([':clientId' => $id]);
+
+    $bookings = $selectBooking->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($bookings as $booking) {
+        $bookingId = $booking['id'];
+        
+        $sql = 'DELETE FROM tickets WHERE id = :id';
+        $deleteTicket = $pdo->prepare($sql);
+        $deleteTicket->execute([':id' => $bookingId]);
+
+        $sql = 'DELETE FROM bookings WHERE clientId = :clientId';
+        $deleteBooking = $pdo->prepare($sql);
+        $deleteBooking->execute([':clientId' => $id]);
+    }
+
+
+
+
+       
+        
+
+        echo "Client mis à jour avec succès.";
+    } catch (PDOException $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
 }
 ?>
 <div class="container">
