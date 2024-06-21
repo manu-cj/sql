@@ -23,4 +23,8 @@
 </nav>
 <?php
 session_start();
+
+function getName($name) {
+    echo $name;
+}
 ?>
