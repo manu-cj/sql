@@ -1,9 +1,7 @@
 <?php
-//Check if credentials are valid
 
-// Paramètres de connexion à la base de données
 $host = 'db';
-$dbname = 'reunion_island';
+$dbname = 'colyseum';
 $username = 'myuser';
 $password = 'mypassword';
 
